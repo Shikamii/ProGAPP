@@ -7,10 +7,10 @@ import java.awt.Graphics2D;
 import java.awt.event.ActionListener;
 
 
-public class PanelCover extends javax.swing.JPanel {
+public class PanelLoginAndRegister extends javax.swing.JPanel {
 
     private ActionListener event;
-    public PanelCover() {
+    public PanelLoginAndRegister() {
         initComponents();
         setOpaque(false);
     }

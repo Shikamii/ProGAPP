@@ -1,25 +1,73 @@
 package cinemaproptit;
 
 import component.PanelCover;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.text.DecimalFormat;
 import net.miginfocom.swing.MigLayout;
+import org.jdesktop.animation.timing.Animator;
+import org.jdesktop.animation.timing.TimingTarget;
+import org.jdesktop.animation.timing.TimingTargetAdapter;
 
 public class Main extends javax.swing.JFrame {
 
     private MigLayout layout;
     private PanelCover cover;   // tao 1 panel de cho vao Jframe bg
+    private boolean isLogin;
     private final double addSize = 30;
     private final double coverSize = 40;
-    
+    private final DecimalFormat df = new DecimalFormat("##0.###");
     public Main() {
         initComponents();
         init();
     }
 
     private void init(){
-        layout = new MigLayout("fill, insets 0");
+        layout = new MigLayout("fill, insets 0");  // tạo một cái đối tượng layout của miglayout để set cho background
         cover = new PanelCover();
-        bg.setLayout(layout);   // tao 1 doi tuong layOut tu cai MigLayOut;
+        
+        TimingTarget target = new TimingTargetAdapter(){
+            @Override
+            public void timingEvent(float fraction){
+                double fractionCover;
+                double size = coverSize;
+                if(fraction <= 0.5f){
+                    size += fraction * addSize;
+                }
+                else{
+                    size += addSize -  fraction * addSize;
+                }
+                if(isLogin){
+                    fractionCover = 1f - fraction;
+                }else{
+                    fractionCover = fraction;
+                }
+                fractionCover = Double.valueOf(df.format(fractionCover));
+                layout.setComponentConstraints(cover, "width " + size + "%, pos " + fractionCover + "al 0 n 100%");
+                bg.revalidate();
+            }
+            
+            @Override
+            public void end(){
+                isLogin = !isLogin;
+            }
+            
+            
+        };
+        Animator animator = new Animator(1000, target);
+        animator.setAcceleration(0.5f);
+        animator.setDeceleration(0.5f);
+        animator.setResolution(0);  // for smooth animation;
+        bg.setLayout(layout);   
         bg.add(cover, "Width " + coverSize + "%, pos 0al 0 n 100%");         // add panel vao frame bg;
+        cover.addEvent(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                if(!animator.isRunning()){
+                    animator.start();
+                }
+            }
+        });
         
     }    
     /**
