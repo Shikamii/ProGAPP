@@ -4,8 +4,11 @@
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
             <file>file:/C:/Users/ADMIN/Documents/NetBeansProjects/CinemaProPTIT/src/cinemaproptit/Main.java</file>
-            <file>file:/C:/Users/ADMIN/Documents/NetBeansProjects/CinemaProPTIT/src/cinemaproptit/CinemaProPTIT.java</file>
-            <file>file:/C:/Users/ADMIN/Documents/NetBeansProjects/CinemaProPTIT/src/icon/mail.png</file>
+            <file>file:/C:/Users/ADMIN/Documents/NetBeansProjects/CinemaProPTIT/src/swing/Button.java</file>
+            <file>file:/C:/Users/ADMIN/Documents/NetBeansProjects/CinemaProPTIT/src/swing/MyTextField.java</file>
+            <file>file:/C:/Users/ADMIN/Documents/NetBeansProjects/CinemaProPTIT/src/swing/ButtonOutLine.java</file>
+            <file>file:/C:/Users/ADMIN/Documents/NetBeansProjects/CinemaProPTIT/src/component/PanelLoginAndRegister.java</file>
+            <file>file:/C:/Users/ADMIN/Documents/NetBeansProjects/CinemaProPTIT/src/swing/MyPasswordField.java</file>
             <file>file:/C:/Users/ADMIN/Documents/NetBeansProjects/CinemaProPTIT/src/component/PanelCover.java</file>
         </group>
     </open-files>
