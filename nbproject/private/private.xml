@@ -3,13 +3,13 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/ADMIN/Documents/NetBeansProjects/CinemaProPTIT/src/cinemaproptit/Main.java</file>
-            <file>file:/C:/Users/ADMIN/Documents/NetBeansProjects/CinemaProPTIT/src/swing/Button.java</file>
-            <file>file:/C:/Users/ADMIN/Documents/NetBeansProjects/CinemaProPTIT/src/swing/MyTextField.java</file>
-            <file>file:/C:/Users/ADMIN/Documents/NetBeansProjects/CinemaProPTIT/src/swing/ButtonOutLine.java</file>
-            <file>file:/C:/Users/ADMIN/Documents/NetBeansProjects/CinemaProPTIT/src/component/PanelLoginAndRegister.java</file>
-            <file>file:/C:/Users/ADMIN/Documents/NetBeansProjects/CinemaProPTIT/src/swing/MyPasswordField.java</file>
-            <file>file:/C:/Users/ADMIN/Documents/NetBeansProjects/CinemaProPTIT/src/component/PanelCover.java</file>
+            <file>file:/C:/Users/ADMIN/Documents/NetBeansProjects/CinemaProPTIT/src/model/ModelItem.java</file>
+            <file>file:/C:/Users/ADMIN/Documents/NetBeansProjects/CinemaProPTIT/src/component/FormHome.java</file>
+            <file>file:/C:/Users/ADMIN/Documents/NetBeansProjects/CinemaProPTIT/src/swing/PictureBox.java</file>
+            <file>file:/C:/Users/ADMIN/Documents/NetBeansProjects/CinemaProPTIT/src/cinemaproptit/Demo.java</file>
+            <file>file:/C:/Users/ADMIN/Documents/NetBeansProjects/CinemaProPTIT/src/cinemaproptit/Home.java</file>
+            <file>file:/C:/Users/ADMIN/Documents/NetBeansProjects/CinemaProPTIT/src/component/Item.java</file>
+            <file>file:/C:/Users/ADMIN/Documents/NetBeansProjects/CinemaProPTIT/src/star/rating/StarRating.java</file>
         </group>
     </open-files>
 </project-private>
