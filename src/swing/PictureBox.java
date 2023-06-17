@@ -19,6 +19,7 @@ public class PictureBox extends JLayeredPane {
 
     public void setImage(Icon image) {
         this.image = image;
+        repaint();
     }
 
     private Icon image;
@@ -58,4 +59,5 @@ public class PictureBox extends JLayeredPane {
     private Image toImage(Icon icon) {
         return ((ImageIcon) icon).getImage();
     }
+    
 }

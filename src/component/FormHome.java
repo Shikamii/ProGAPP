@@ -1,5 +1,6 @@
 package component;
 
+import java.awt.Color;
 import java.awt.Image;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
@@ -7,6 +8,7 @@ import java.io.IOException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.imageio.ImageIO;
+import javax.swing.Icon;
 import javax.swing.ImageIcon;
 import javax.swing.JFileChooser;
 import javax.swing.JLabel;
@@ -21,6 +23,7 @@ public class FormHome extends javax.swing.JPanel {
     public FormHome() {
         initComponents();
         scroll.setVerticalScrollBar(new ScrollBar());
+        jPanel1.setBackground(Color.red);
     }
 
     public void addItem(ModelItem data){
@@ -30,7 +33,8 @@ public class FormHome extends javax.swing.JPanel {
             @Override
             public void mousePressed(MouseEvent me) {
                 if(SwingUtilities.isLeftMouseButton(me)){
-                    System.out.println(data.getItemID());
+//                    System.out.println(data.getItemID());
+                    remove(item);
                 }
             }
             
@@ -64,6 +68,7 @@ public class FormHome extends javax.swing.JPanel {
         scroll.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
         scroll.setViewportView(panelItem);
 
+        jPanel1.setBackground(new java.awt.Color(204, 255, 255));
         jPanel1.setOpaque(false);
 
         jLabel1.setText("Tên: ");
@@ -86,6 +91,8 @@ public class FormHome extends javax.swing.JPanel {
         });
 
         jLabel4.setText("Ảnh:");
+
+        picture.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
         btnAddImage.setText("Thêm ảnh");
         btnAddImage.addActionListener(new java.awt.event.ActionListener() {
@@ -147,7 +154,7 @@ public class FormHome extends javax.swing.JPanel {
                     .addComponent(jLabel3))
                 .addGap(18, 18, 18)
                 .addComponent(btnAdd)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(121, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
@@ -164,27 +171,30 @@ public class FormHome extends javax.swing.JPanel {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(scroll, javax.swing.GroupLayout.PREFERRED_SIZE, 583, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 60, Short.MAX_VALUE))
+                .addComponent(scroll, javax.swing.GroupLayout.PREFERRED_SIZE, 592, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
     private void lblNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_lblNameActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_lblNameActionPerformed
-
+    JFileChooser chooser = new JFileChooser();
     private void btnAddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddActionPerformed
         // TODO add your handling code here:
         String name = lblName.getText();
         String description = lblDescription.getText();
         String link = lblLink.getText();
         
-        addItem(new ModelItem(1, name, description, new ImageIcon(getClass().getResource("/icon/film.jpg")), link));
+        Icon icon = picture.getImage();
+        //addItem(new ModelItem(1, name, description, new ImageIcon(getClass().getResource("/icon/film.jpg")), link));
+        addItem(new ModelItem(1, name, description, icon, link));
+                
     }//GEN-LAST:event_btnAddActionPerformed
 
     private void btnAddImageActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddImageActionPerformed
         // TODO add your handling code here:
-        JFileChooser chooser = new JFileChooser();
+        //JFileChooser chooser = new JFileChooser();
         FileNameExtensionFilter filter = new FileNameExtensionFilter(
                 "JPG & GIF Images", "jpg", "gif");
         chooser.setFileFilter(filter);
@@ -192,11 +202,18 @@ public class FormHome extends javax.swing.JPanel {
         if(returnVal == JFileChooser.APPROVE_OPTION) {
             try {
                 Image img = ImageIO.read(chooser.getSelectedFile());
+                //ImageIcon icon = new Image();
                 JLabel picLabel = new JLabel(new ImageIcon(img));
-                picture.add(picLabel);
-            } catch (IOException ex) {
-                Logger.getLogger(FormHome.class.getName()).log(Level.SEVERE, null, ex);
+                picture.setImage(new ImageIcon(img));
+                
+
+                System.out.println("You chose to open this file: " +
+                chooser.getSelectedFile().getName());
+            } catch (Exception ex) {
+                ex.printStackTrace();
             }
+//            System.out.println("You chose to open this file: " +
+//            chooser.getSelectedFile().getName());
                     
         }
     }//GEN-LAST:event_btnAddImageActionPerformed

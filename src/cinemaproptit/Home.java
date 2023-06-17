@@ -16,12 +16,15 @@ public class Home extends javax.swing.JFrame {
     public Home() {
         initComponents();
         setLocationRelativeTo(null);
-        setBackground(new Color(0, 0, 0, 0));
+        //setBackground(new Color(0, 0, 0, 0));
+        setBackground(Color.yellow);
         init();
+        
     }
     
     private void init(){
         home = new FormHome();
+        header.setBackground(Color.red);
         winButton.initEvent(this, background1);
         mainPanel.setLayout(new BorderLayout());
         mainPanel.add(home);
@@ -34,8 +37,8 @@ public class Home extends javax.swing.JFrame {
 //            home.addItem(new ModelItem(ID++, "NAD", "Description", new ImageIcon(getClass().getResource("/icon/1234.jpg")), "https://motphimtv.me/phim/doi-voi-toi-anh-ay-la-nguoi-nguy-hiem-10897.html"));
 //            
 //        }
-        home.addItem(new ModelItem(ID++, "My Lethal Man", "Tâm lý-Tình cảm", new ImageIcon(getClass().getResource("/icon/1234.jpg")), "https://motphimtv.me/phim/doi-voi-toi-anh-ay-la-nguoi-nguy-hiem-10897.html"));
-        home.addItem(new ModelItem(ID++, "Eternals", "Hành động", new ImageIcon(getClass().getResource("/icon/film.jpg")), "https://motphimtv.me/phim/chung-toc-bat-tu-9781.html"));
+//        home.addItem(new ModelItem(ID++, "My Lethal Man", "Tâm lý-Tình cảm", new ImageIcon(getClass().getResource("/icon/1234.jpg")), "https://motphimtv.me/phim/doi-voi-toi-anh-ay-la-nguoi-nguy-hiem-10897.html"));
+//        home.addItem(new ModelItem(ID++, "Eternals", "Hành động", new ImageIcon(getClass().getResource("/icon/film.jpg")), "https://motphimtv.me/phim/chung-toc-bat-tu-9781.html"));
 
     }
     
@@ -56,6 +59,7 @@ public class Home extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
 
+        header.setBackground(new java.awt.Color(153, 255, 255));
         header.setOpaque(false);
 
         javax.swing.GroupLayout headerLayout = new javax.swing.GroupLayout(header);
@@ -156,7 +160,7 @@ public class Home extends javax.swing.JFrame {
             }
         });
     }
-
+    
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private swing.Background background1;
     private javax.swing.JPanel header;
